@@ -7,7 +7,7 @@ on:
     types: ['opened', 'synchronize']
     branches:
       - 'main'
-  releases:
+  release:
     types: ['published']
     branches:
       - 'main'

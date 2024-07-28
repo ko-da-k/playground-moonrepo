@@ -7,6 +7,10 @@ on:
     types: ['opened', 'synchronize']
     branches:
       - 'main'
+  release:
+    types: ['published']
+    branches:
+      - 'main'
 jobs:
   ci:
     name: 'CI'
@@ -15,6 +19,9 @@ jobs:
       - uses: 'actions/checkout@v4'
         with:
           fetch-depth: 0
+
+      - run: echo "git tag --sort=creatordate"
+      
       - uses: 'moonrepo/setup-toolchain@v0'
         with:
           moon-version: 1.27.4

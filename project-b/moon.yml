@@ -1,3 +1,7 @@
 tasks:
+  sample:
+    command: 'cat sample.txt'
   build:
     command: 'echo "project-b build"'
+    deps:
+      - 'sample'

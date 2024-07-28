@@ -33,4 +33,8 @@ jobs:
       - run: 'moon run :build --remote --affected'
         env:
           MOON_BASE: refs/tags/${{ steps.previous_tag.outputs.previous_tag }}
+
+      - run: 'moon ci'
+
+      - run: 'moon ci --base refs/tags/${{ steps.previous_tag.outputs.previous_tag }}'
          

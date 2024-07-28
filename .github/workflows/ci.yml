@@ -22,5 +22,5 @@ jobs:
       - uses: 'moonrepo/setup-toolchain@v0'
         with:
           moon-version: 1.27.4
-      - run: 'moon run ci --remote --affected'
+      - run: 'moon ci --remote --affected'
          

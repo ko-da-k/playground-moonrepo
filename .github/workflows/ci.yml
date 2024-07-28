@@ -7,10 +7,6 @@ on:
     types: ['opened', 'synchronize']
     branches:
       - 'main'
-  release:
-    types: ['published']
-    branches:
-      - 'main'
 jobs:
   ci:
     name: 'CI'

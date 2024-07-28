@@ -1,3 +1,6 @@
 tasks:
   build:
     command: 'echo "project-a build"'
+  
+  deploy:
+    command: 'echo "project-a deploy"'

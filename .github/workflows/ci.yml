@@ -22,5 +22,10 @@ jobs:
       - uses: 'moonrepo/setup-toolchain@v0'
         with:
           moon-version: 1.27.4
-      - run: 'moon run :build --remote --affected'
+
+      - run: echo "previous_tag=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+        id: previous_tag
+      - run: 'moon run :build --remote --affected -- --base refs/tags/$previous_tag'
+        env:
+          previous_tag: ${{ steps.previous_tag.outputs.previous_tag }}
          

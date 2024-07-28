@@ -30,7 +30,7 @@ jobs:
       - run: 'echo "previous_tag=$(git tag --sort=-creatordate | head -n 2 | tail -n 1)" >> $GITHUB_OUTPUT'
         id: previous_tag
 
-      - run: 'moon run :build --remote --affected -- --base refs/tags/$previous_tag'
+      - run: 'moon run :build --remote --affected'
         env:
-          previous_tag: ${{ steps.previous_tag.outputs.previous_tag }}
+          MOON_BASE: refs/tags/${{ steps.previous_tag.outputs.previous_tag }}
          
